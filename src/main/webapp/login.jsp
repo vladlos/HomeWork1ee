@@ -15,15 +15,15 @@
 
 
 <%  String login = request.getParameter("login");
-    String pass = request.getParameter("psv")
-    if(request.getParameter("new_user").equals("true")){
+    String pass = request.getParameter("psv");
+    if(request.getParameterMap().containsKey("new_user")){
     com.market.UserController.createUser(login,pass);
     }
-    if(UserController.checkLogPass(login,pass)){%>
+    if(!UserController.checkLogPass(login,pass)){%>
 
-
+    <h1>Login or Pasword is incorrect</h1>
 <%}%>
 
-     <%=com.market.UserController.showUserList()%>
+    <%=com.market.UserController.showUserList()%>
 </body>
 </html>
