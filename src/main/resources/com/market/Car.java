@@ -8,10 +8,13 @@ package com.market;
 public class Car {
     String model;
     String color;
+    int price;
 
-    public Car(String model, String color) {
+    public Car(String model, String color, int price) {
+
         this.model = model;
         this.color = color;
+        this.price = price;
     }
 
     public String getModel() {
@@ -28,5 +31,13 @@ public class Car {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 }

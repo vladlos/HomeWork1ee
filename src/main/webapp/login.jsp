@@ -22,6 +22,10 @@
     if(!UserController.checkLogPass(login,pass)){%>
 
     <h1>Login or Pasword is incorrect</h1>
+<%} else {session.setAttribute("login",login); %>
+<script language="JavaScript">
+    window.location.href = "shop.jsp"
+</script>
 <%}%>
 
     <%=com.market.UserController.showUserList()%>
