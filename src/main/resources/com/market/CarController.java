@@ -21,7 +21,7 @@ public class CarController {
     public static String showAllCars(){
         String result="<ul>";
         for(Car car:carList){
-            result+="<li> Model:"+car.getModel()+"<a href=\"buy.jsp?buy="+car.getModel()+"\">buy</a></li> ";
+            result+="<li> Model:"+car.getModel()+"<a href=\"buy.jsp?buy="+car.getModel()+"\"> buy</a></li> ";
         }
         result+="<ul>";
         return result;
