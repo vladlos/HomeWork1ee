@@ -1,3 +1,5 @@
+<%@ page import="com.market.CarController" %>
+<%@ page import="com.market.UserController" %>
 <%--
   Created by IntelliJ IDEA.
   User: Vlad
@@ -11,6 +13,13 @@
     <title></title>
 </head>
 <body>
+<%
+    String login=(String) session.getAttribute("login");
+    if(request.getParameterMap().containsKey("buy")){
+        UserController.currentUser.buyCar(request.getParameter("buy"));
+    }
+%>
+Welcome dear <%=login%>!
 
 </body>
 </html>

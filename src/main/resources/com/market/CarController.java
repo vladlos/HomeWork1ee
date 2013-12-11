@@ -26,4 +26,14 @@ public class CarController {
         result+="<ul>";
         return result;
     }
+
+    public static Car getCar(String model){
+        Car ret = null;
+        for(Car car:carList){
+            if(car.getModel().equals(model)){
+                ret = car;
+            }
+        }
+        return ret;
+    }
 }

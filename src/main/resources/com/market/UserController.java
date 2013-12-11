@@ -10,6 +10,8 @@ import java.util.List;
  * Time: 23:29
  */
 public class UserController extends HttpServlet{
+
+public static User currentUser;
 public static List<User> userBase = new LinkedList<User>();
     public static void createUser(String name, String pass) {
         userBase.add(new User(name,pass));
@@ -19,6 +21,7 @@ public static List<User> userBase = new LinkedList<User>();
         boolean ret = false;
         for(User user:userBase){
             if(user.getLogin().equals(login) && user.getPass().equals(pass)){
+                currentUser=user;
                 ret = true;
             }
         }
@@ -32,5 +35,9 @@ public static List<User> userBase = new LinkedList<User>();
        }
        result+="<ul>";
        return result;
+    }
+
+    public static void buyCar(String model){
+        currentUser.addCar(CarController.getCar(model));
     }
 }

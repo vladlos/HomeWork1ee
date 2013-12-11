@@ -34,7 +34,7 @@ public class User {
         this.pass = pass;
     }
 
-    public void buyCar(Car car){
+    public void addCar(Car car){
         cars.add(car);
     }
 
