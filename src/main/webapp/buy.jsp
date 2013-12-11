@@ -16,10 +16,16 @@
 <%
     String login=(String) session.getAttribute("login");
     if(request.getParameterMap().containsKey("buy")){
-        UserController.currentUser.buyCar(request.getParameter("buy"));
+        UserController.buyCar(request.getParameter("buy"));
     }
 %>
 Welcome dear <%=login%>!
+
+<%=UserController.showMyCars()%>
+
+<form action="shop.jsp" method="POST">
+    <input type="submit" value="Back to shopping">
+</form>
 
 </body>
 </html>

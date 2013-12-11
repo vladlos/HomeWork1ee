@@ -40,4 +40,16 @@ public static List<User> userBase = new LinkedList<User>();
     public static void buyCar(String model){
         currentUser.addCar(CarController.getCar(model));
     }
+
+    public static String showMyCars(){
+        List<Car> cars = currentUser.getAllCars();
+
+        String result="<ul>";
+        for(Car car:cars){
+            result+="<li> Model:"+car.getModel()+"</li> ";
+        }
+        result+="<ul>";
+        return result;
+
+    }
 }
