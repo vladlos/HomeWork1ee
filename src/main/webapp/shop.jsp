@@ -10,15 +10,19 @@
 <html>
 <head>
     <title></title>
+    <link type="text/css" rel="stylesheet" href="style.css">
 </head>
 <body>
 <%
     String login=(String) session.getAttribute("login");
 
 %>
+<div id="content">
 Welcome dear <%=login%>!
+<a href="buy.jsp"><img height="25px" src="img/images.jpg"></a><br>
+    <a href="logout.jsp" class="lo">LOGOUT</a>
 
 <%=CarController.showAllCars()%>
-
+</div>
 </body>
 </html>

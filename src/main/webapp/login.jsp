@@ -9,7 +9,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title></title>
+    <title>Welcome!</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
 </head>
 <body style="text-align: center;">
 
@@ -20,8 +21,11 @@
     com.market.UserController.createUser(login,pass);
     }
     if(!UserController.checkLogPass(login,pass)){%>
-
-    <h1>Login or Pasword is incorrect</h1>
+<div id="content">
+    <h1>Login or Password is incorrect</h1>
+    <br>
+    <a href="index.jsp"><-BACK</a>
+</div>
 <%} else {session.setAttribute("login",login); %>
 <script language="JavaScript">
     window.location.href = "shop.jsp"

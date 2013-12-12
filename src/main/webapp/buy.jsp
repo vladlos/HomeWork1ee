@@ -11,21 +11,24 @@
 <html>
 <head>
     <title></title>
+    <link type="text/css" rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="content">
 <%
     String login=(String) session.getAttribute("login");
     if(request.getParameterMap().containsKey("buy")){
-        UserController.buyCar(request.getParameter("buy"));
+        UserController.buyCar(Integer.getInteger(request.getParameter("buy")));
     }
 %>
-Welcome dear <%=login%>!
+Welcome dear <%=login%>!<br><a href="logout.jsp" class="lo">LOGOUT</a>
 
+<h3>Your cars:</h3>
 <%=UserController.showMyCars()%>
 
 <form action="shop.jsp" method="POST">
     <input type="submit" value="Back to shopping">
 </form>
-
+</div>
 </body>
 </html>

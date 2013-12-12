@@ -40,19 +40,18 @@ public static List<User> userBase = db.getUsers();
        return result;
     }
 
-    public static void buyCar(String model){
-        currentUser.addCar(CarController.getCar(model));
+    public static void buyCar(int id){
+        db.buyCar(CarController.getCar(id),currentUser);
     }
 
     public static String showMyCars(){
-        List<Car> cars = currentUser.getAllCars();
+        List<Car> cars = db.getMyCars(currentUser);
 
         String result="<ul>";
         for(Car car:cars){
-            result+="<li> Model:"+car.getModel()+"</li> ";
+            result+="<li class=\"car\"> Model:"+car.getModel()+"<br>Color: <div class=\"colorbox\" style=\"background-color:"+car.getColor()+"\">&nbsp</div>"+"<br>price: "+car.getPrice()+"$</li> ";
         }
         result+="<ul>";
         return result;
-
     }
 }

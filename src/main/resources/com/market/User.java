@@ -12,7 +12,7 @@ public class User {
     private int id;
     private String login;
     private String pass;
-    private List<Car> cars = new LinkedList<Car>();
+
 
     public User(int id, String login, String pass) {
         this.login = login;
@@ -30,13 +30,5 @@ public class User {
 
     public String getPass() {
         return pass;
-    }
-
-    public void addCar(Car car){
-        cars.add(car);
-    }
-
-    public List<Car> getAllCars() {
-        return cars;
     }
 }
