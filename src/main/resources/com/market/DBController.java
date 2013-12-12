@@ -33,10 +33,25 @@ public class DBController {
         }
     }
 
+    public List<Car> getCars(){
+        List<Car> cars = new LinkedList<Car>();
 
+        try {
+            String sql = "SELECT * FROM cars; ";
+            Statement statement = conn.createStatement();
+            ResultSet result = statement.executeQuery(sql);//получение данных из БД
+            while (result.next()){
+                cars.add(new Car(result.getInt(1), result.getString(2), result.getString(3), result.getInt(4)));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+
+        return cars;
+    }
 
     public List<User> getUsers(){
-       List<User> userBase = new LinkedList<User>();
+        List<User> userBase = new LinkedList<User>();
 
         try {
             String sql = "SELECT * FROM users; ";
@@ -44,7 +59,7 @@ public class DBController {
             ResultSet result = statement.executeQuery(sql);//получение данных из БД
 
             while (result.next()){
-                userBase.add(new User(result.getInt(1),result.getString(2),result.getString(3)));
+                userBase.add(new User(result.getInt(1), result.getString(2), result.getString(3)));
             }
         } catch (SQLException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.

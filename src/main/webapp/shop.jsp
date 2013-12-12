@@ -14,7 +14,7 @@
 <body>
 <%
     String login=(String) session.getAttribute("login");
-    if(CarController.carList.isEmpty()){ CarController.init();}
+
 %>
 Welcome dear <%=login%>!
 

@@ -11,6 +11,16 @@ public class Car {
     String color;
     int price;
 
+    @Override
+    public String toString() {
+        return "Car{" +
+                "id=" + id +
+                ", model='" + model + '\'' +
+                ", color='" + color + '\'' +
+                ", price=" + price +
+                '}';
+    }
+
     public Car(int id, String model, String color, int price) {
         this.id = id;
         this.model = model;
