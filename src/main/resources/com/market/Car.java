@@ -6,12 +6,13 @@ package com.market;
  * Time: 23:17
  */
 public class Car {
+    int id;
     String model;
     String color;
     int price;
 
-    public Car(String model, String color, int price) {
-
+    public Car(int id, String model, String color, int price) {
+        this.id = id;
         this.model = model;
         this.color = color;
         this.price = price;

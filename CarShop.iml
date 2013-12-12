@@ -25,7 +25,7 @@
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.8.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax:javaee-api:6.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:servlet-api:2.4" level="project" />
-    <orderEntry type="library" name="mysql-connector-java-5.1.26-bin" level="project" />
+    <orderEntry type="library" exported="" name="mysql-connector-java-5.1.26-bin" level="project" />
   </component>
 </module>
 

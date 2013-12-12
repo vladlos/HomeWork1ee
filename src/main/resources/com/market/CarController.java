@@ -11,11 +11,11 @@ import java.util.List;
 public class CarController {
     public static List<Car> carList = new LinkedList<Car>();
     public static void init(){
-        carList.add(new Car("honda crv","green",1230));
-        carList.add(new Car("Bugatti veyron","red",34000));
-        carList.add(new Car("Lamborgini Diablo","red",64000));
-        carList.add(new Car("Ferrari enzo","red",23000));
-        carList.add(new Car("Nissan 350Z","silver",14000));
+        carList.add(new Car(1,"honda crv","green",1230));
+        carList.add(new Car(2,"Bugatti veyron","red",34000));
+        carList.add(new Car(3,"Lamborgini Diablo","red",64000));
+        carList.add(new Car(4,"Ferrari enzo","red",23000));
+        carList.add(new Car(5,"Nissan 350Z","silver",14000));
     }
 
     public static String showAllCars(){

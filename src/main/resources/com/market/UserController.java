@@ -11,13 +11,13 @@ import java.util.List;
  */
 public class UserController extends HttpServlet{
 
-public static User currentUser;
-public static List<User> userBase = new LinkedList<User>();
 private static DBController db = new DBController();
+public static User currentUser;
+public static List<User> userBase = db.getUsers();
+
 
     public static void createUser(String name, String pass) {
         db.newUser(name,pass);
-        userBase.add(new User(name,pass));
     }
 
     public static boolean checkLogPass(String login,String pass){
